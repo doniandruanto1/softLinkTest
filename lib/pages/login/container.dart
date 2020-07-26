@@ -5,8 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shoplink_test/config/api.dart';
 import 'package:http/http.dart' as http;
 import 'package:shoplink_test/models/pref.dart';
-
-import 'home.dart';
+import 'package:shoplink_test/pages/main.pages.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -42,30 +41,13 @@ class _LoginState extends State<Login> {
         loading = false;
         savePref(token);
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Home()));
+            .push(MaterialPageRoute(builder: (context) => MainPage()));
       });
     } else {
       setState(() {
         loading = false;
       });
-      print('gagal');
     }
-  }
-
-  var isHaveToken;
-  getPref() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    setState(() {
-      isHaveToken = preferences.getString(PrefModel.token);
-      loginStatus =
-          isHaveToken != '' ? LoginStatus.isSignIn : LoginStatus.isNotSignIn;
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    // getPref();
   }
 
   @override

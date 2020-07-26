@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'pages/login.dart';
+import 'package:shoplink_test/pages/login/container.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,8 +14,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Login();
+    return Login();    
   }
 }
