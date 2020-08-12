@@ -4,7 +4,7 @@ import 'package:shoplink_test/pages/login/container.dart';
 void main() {
   runApp(MaterialApp(
     home: MyApp(),
-    title: "shopLink_testing",
+    title: "shopLink",
   ));
 }
 
